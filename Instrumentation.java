@@ -11,7 +11,6 @@
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -35,7 +34,6 @@ public class Instrumentation{
         
         //Setting the format of the date, and then getting
         SimpleDateFormat currentdate = new SimpleDateFormat("ddyyMMhhmmss");
-        // Date currentdate = date.format(new Date());
 
         //Naming the log file accompanied by the time it was made
         logFileN = "instrumentation" + currentdate.format(new Date()) + ".log";
@@ -93,7 +91,7 @@ public class Instrumentation{
             //Will calculate the difference from the stop and start times to get the total time the software took to perform in ms
             timeTaken = (stopTime - startTime);
 
-            if(comment == "Measuring Main Process Complete!")
+            if(comment == "Measuring Main Process with Instrumentation Complete!")
                 timeTaken = totalTime;
 
             else
@@ -129,7 +127,6 @@ public class Instrumentation{
             System.out.println("Error with writing the log content to the designated file!");
             error.printStackTrace();
         }
-    // writeInLogFile("TOTAL TIME: " + stopTime);
     }
 
     //Method for activating the Instrumentation class
